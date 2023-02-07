@@ -21,4 +21,7 @@ steps:
   inputs:
        mavenPomFile: "pom.xml"
        goals: "clean install"
-       
+- task: CopyFiles@1
+  inputs:
+    SourceFolder: "**/spring*.jar"
+    TargetFolder: ${build.artifactstagingdirectory}
