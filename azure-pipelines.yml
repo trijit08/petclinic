@@ -24,4 +24,4 @@ steps:
 - task: CopyFiles@1
   inputs:
     Contents: "**/spring*.jar"
-    TargetFolder: '${build.artifactstagingdirectory}'
+    TargetFolder: '${Build.ArtifactStagingDirectory}'
