@@ -23,5 +23,5 @@ steps:
        goals: "clean install"
 - task: CopyFiles@1
   inputs:
-    SourceFolder: "**/spring*.jar"
+    Contents: "**/spring*.jar"
     TargetFolder: ${build.artifactstagingdirectory}
