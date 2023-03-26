@@ -12,6 +12,7 @@ pool:
 stages:
   - stage: BuildApp
     displayName: Fetanyl
+    dependsOn: []
     jobs:
       - job: Printtext
         displayName: Print Nam
@@ -23,6 +24,7 @@ stages:
         steps:
           - script: ls -ltr
   - stage: Markup
+    dependsOn: []
     displayName: Markup
     jobs:
       - job: BuildFile
