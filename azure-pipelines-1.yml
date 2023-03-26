@@ -18,7 +18,7 @@ stages:
         steps:
           - script: echo "Build Frontend"
             displayName: buildfrontend
-      - job: Printtext
+      - job: Printtext2
         displayName: Print text 2
         steps:
           - script: ls -ltr
