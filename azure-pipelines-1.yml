@@ -1,0 +1,41 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: BuildApp
+    displayName: Fetanyl
+    jobs:
+      - job: Printtext
+        displayName: Print Nam
+        steps:
+          - script: echo "Build Frontend"
+            displayName: buildfrontend
+      - job: Printtext
+        displayName: Print text 2
+        steps:
+          - script: ls -ltr
+  - stage: Markup
+    displayName: Markup
+    jobs:
+      - job: BuildFile
+        displayName: Build File
+        steps:
+        - task: Maven@3
+          inputs:
+            mavenPomFile: 'pom.xml'
+            publishJUnitResults: true
+            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+            javaHomeOption: 'JDKVersion'
+            mavenVersionOption: 'Default'
+            mavenAuthenticateFeed: false
+            effectivePomSkip: false
+            sonarQubeRunAnalysis: false
+
